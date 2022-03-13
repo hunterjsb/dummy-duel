@@ -10,3 +10,8 @@ body {
  h1 {
    color: white;
  }
+
+ .card {
+   color: white;
+   background-color: 	rgb(105,105,105);
+ }
