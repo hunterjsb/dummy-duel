@@ -29,6 +29,10 @@ const articleSchema = new mongoose.Schema({
   sanitizedHtml: {
     type: String,
     required: true
+  },
+  side: {
+    type: String,
+    required: false
   }
 })
 

@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="title">Title</label>
+  <label for="title">Side</label>
   <input required value="<%= article.title %>" type="text" name="title" id="title" class="form-control">
 </div>
 <div class="form-group">
@@ -10,6 +10,14 @@
   <label for="markdown">Markdown</label>
   <textarea required name="markdown" id="markdown" class="form-control"><%= article.markdown %></textarea>
 </div>
+<!-- side code input -->
+<div class="input-group mb-3">
+  <input value="<%= article.side %>" type="text" class="form-control" placeholder="Side Code" aria-label="Side Code"
+    aria-describedby="button-addon2" name="side" id="side">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+  </div>
+</div>
 
-<a href="/" class="btn btn-secondary">Cancel</a>
-<button type="submit" class="btn btn-primary">Save</button>
+<a href="/" class="btn btn-outline-danger">Cancel</a>
+<!-- button type="submit" class="btn btn-outline-primary">Save as Draft</button-->
