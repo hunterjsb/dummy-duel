@@ -20,5 +20,6 @@ app.get('/', async (req, res) => {
 })
 
 app.use('/articles', articleRouter)
+app.use(express.static('public'))
 
 app.listen(process.env.PORT || 5000)
