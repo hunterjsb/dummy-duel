@@ -1,23 +1,28 @@
-<div class="form-group">
-  <label for="title">Side</label>
-  <input required value="<%= article.title %>" type="text" name="title" id="title" class="form-control">
-</div>
-<div class="form-group">
-  <label for="description">Description</label>
-  <textarea name="description" id="description" class="form-control"><%= article.description %></textarea>
-</div>
-<div class="form-group">
-  <label for="markdown">Markdown Content</label>
-  <textarea required name="markdown" id="markdown" class="form-control"><%= article.markdown %></textarea>
-</div>
-<!-- side code input -->
-<div class="input-group mb-3">
-  <input value="<%= article.side %>" type="text" class="form-control" placeholder="Side Code" aria-label="Side Code"
-    aria-describedby="button-addon2" name="side" id="side">
-  <div class="input-group-append">
-    <button class="btn btn-success" type="submit" id="button-addon2">Submit</button>
-  </div>
-</div>
 
-<a href="/" class="btn btn-outline-danger">Cancel</a>
-<!-- button type="submit" class="btn btn-outline-primary">Save as Draft</button-->
+  <div class="form-group">
+    <label for="title">Side</label>
+    <input required value="<%= argument.title %>" type="text" name="title" id="title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" class="form-control"><%= argument.description %></textarea>
+  </div>
+  <div class="form-group">
+    <label for="markdown">Markdown Content</label>
+    <textarea required name="markdown" id="markdown" class="form-control"><%= argument.markdown %></textarea>
+  </div>
+  <!-- side code input -->
+  <div class="col d-flex justify-content-center">
+  <div class="card text-center" style="width: 18rem; background-color: darkslategray;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= randHex %>
+      </h5>
+      <p class="card-text">This is your "Argument Code" -- write it down somewhere.</p>
+      <button class="btn btn-success btn-lg" type="submit" id="button-addon2">Create Argument</button>
+    </div>
+    </div>
+  </div>
+
+  <a href="/" class="btn btn-outline-danger">Cancel</a>
+  <!-- button type="submit" class="btn btn-outline-primary">Save as Draft</button-->

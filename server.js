@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const Article = require('./models/article')
+const Argument = require('./models/argument')
 const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 require('dotenv').config();
@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
 app.get('/', async (req, res) => {
-  const articles = await Article.find().sort({ createdAt: 'desc' })
-  res.render('articles/index', { articles: articles })
+  const argument = await Argument.find().sort({ createdAt: 'desc' })
+  res.render('articles/index', { argument: argument })
 })
 
 app.use('/articles', articleRouter)

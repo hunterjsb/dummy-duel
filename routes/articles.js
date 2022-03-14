@@ -1,49 +1,50 @@
 const express = require('express')
-const Article = require('./../models/article')
+const Argument = require('./../models/argument')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
-  res.render('articles/new', { article: new Article() })
+  randHex = (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
+  res.render('articles/new', { argument: new Argument(), randHex: randHex })
 })
 
 router.get('/edit/:id', async (req, res) => {
-  const article = await Article.findById(req.params.id)
-  res.render('articles/edit', { article: article })
+  const argument = await argument.findById(req.params.id)
+  res.render('articles/edit', { argument: argument })
 })
 
 router.get('/:slug', async (req, res) => {
-  const article = await Article.findOne({ slug: req.params.slug })
-  if (article == null) res.redirect('/')
-  res.render('articles/show', { article: article })
+  const argument = await argument.findOne({ slug: req.params.slug })
+  if (argument == null) res.redirect('/')
+  res.render('articles/show', { argument: argument })
 })
 
 router.post('/', async (req, res, next) => {
-  req.article = new Article()
+  req.argument = new argument()
   next()
-}, saveArticleAndRedirect('new'))
+}, saveArgumentAndRedirect('new'))
 
 router.put('/:id', async (req, res, next) => {
-  req.article = await Article.findById(req.params.id)
+  req.argument = await argument.findById(req.params.id)
   next()
-}, saveArticleAndRedirect('edit'))
+}, saveArgumentAndRedirect('edit'))
 
 router.delete('/:id', async (req, res) => {
-  await Article.findByIdAndDelete(req.params.id)
+  await argument.findByIdAndDelete(req.params.id)
   res.redirect('/')
 })
 
-function saveArticleAndRedirect(path) {
+function saveArgumentAndRedirect(path) {
   return async (req, res) => {
-    let article = req.article
-    article.title = req.body.title
-    article.description = req.body.description
-    article.markdown = req.body.markdown
-    article.side = req.body.side
+    let argument = req.argument
+    argument.title = req.body.title
+    argument.description = req.body.description
+    argument.markdown = req.body.markdown
+    argument.side = req.body.side
     try {
-      article = await article.save()
-      res.redirect(`/articles/${article.slug}`)
+      argument = await argument.save()
+      res.redirect(`/articles/${argument.slug}`)
     } catch (e) {
-      res.render(`articles/${path}`, { article: article })
+      res.render(`articles/${path}`, { argument: argument })
     }
   }
 }
