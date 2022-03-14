@@ -8,28 +8,28 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/edit/:id', async (req, res) => {
-  const argument = await argument.findById(req.params.id)
+  const argument = await Argument.findById(req.params.id)
   res.render('articles/edit', { argument: argument })
 })
 
 router.get('/:slug', async (req, res) => {
-  const argument = await argument.findOne({ slug: req.params.slug })
+  const argument = await Argument.findOne({ slug: req.params.slug })
   if (argument == null) res.redirect('/')
   res.render('articles/show', { argument: argument })
 })
 
 router.post('/', async (req, res, next) => {
-  req.argument = new argument()
+  req.argument = new Argument()
   next()
 }, saveArgumentAndRedirect('new'))
 
 router.put('/:id', async (req, res, next) => {
-  req.argument = await argument.findById(req.params.id)
+  req.argument = await Argument.findById(req.params.id)
   next()
 }, saveArgumentAndRedirect('edit'))
 
 router.delete('/:id', async (req, res) => {
-  await argument.findByIdAndDelete(req.params.id)
+  await Argument.findByIdAndDelete(req.params.id)
   res.redirect('/')
 })
 

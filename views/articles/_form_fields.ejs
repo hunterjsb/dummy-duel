@@ -1,6 +1,6 @@
 
   <div class="form-group">
-    <label for="title">Side</label>
+    <label for="title">Title</label>
     <input required value="<%= argument.title %>" type="text" name="title" id="title" class="form-control">
   </div>
   <div class="form-group">
@@ -17,12 +17,12 @@
     <div class="card-body">
       <h5 class="card-title">
         <%= randHex %>
+        <% argument.argumentId = randHex %>
       </h5>
-      <p class="card-text">This is your "Argument Code" -- write it down somewhere.</p>
-      <button class="btn btn-success btn-lg" type="submit" id="button-addon2">Create Argument</button>
+      <p class="card-text">This is your "Argument Code". </p><p class="card-text"> write it down somewhere.</p>
+      <button class="btn btn-success btn-lg" type="submit">Create Argument</button>
     </div>
     </div>
   </div>
 
   <a href="/" class="btn btn-outline-danger">Cancel</a>
-  <!-- button type="submit" class="btn btn-outline-primary">Save as Draft</button-->

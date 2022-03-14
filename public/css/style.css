@@ -3,6 +3,10 @@ body {
     background-color: rgb(36, 36, 36);
   }
 
+label {
+  color: white
+}
+
  .col {
    color: white;
  }
