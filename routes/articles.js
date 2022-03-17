@@ -39,7 +39,7 @@ function saveArgumentAndRedirect(path) {
     argument.title = req.body.title
     argument.description = req.body.description
     argument.markdown = req.body.markdown
-    argument.side = req.body.side
+    argument.argumentId = req.body.argumentId
     try {
       argument = await argument.save()
       res.redirect(`/articles/${argument.slug}`)

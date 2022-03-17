@@ -31,7 +31,7 @@ const argumentSchema = new mongoose.Schema({
     required: true
   },
   argumentId: {
-    type: Number,
+    type: String,
     required: true
   }
 })

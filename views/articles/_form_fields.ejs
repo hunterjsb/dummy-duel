@@ -1,28 +1,30 @@
+<div class="form-group">
+  <label for="title">Title</label>
+  <input required value="<%= argument.title %>" type="text" name="title" id="title" class="form-control">
+</div>
+<div class="form-group">
+  <label for="description">Description</label>
+  <textarea name="description" id="description" class="form-control"><%= argument.description %></textarea>
+</div>
+<div class="form-group">
+  <label for="markdown">Markdown Content</label>
+  <textarea required name="markdown" id="markdown" class="form-control"><%= argument.markdown %></textarea>
+</div>
 
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input required value="<%= argument.title %>" type="text" name="title" id="title" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea name="description" id="description" class="form-control"><%= argument.description %></textarea>
-  </div>
-  <div class="form-group">
-    <label for="markdown">Markdown Content</label>
-    <textarea required name="markdown" id="markdown" class="form-control"><%= argument.markdown %></textarea>
-  </div>
+<textarea name="argumentId" id="argumentId" style="display:none;"><%= argument.argumentId=randHex %></textarea>
+
   <!-- side code input -->
   <div class="col d-flex justify-content-center">
-  <div class="card text-center" style="width: 18rem; background-color: darkslategray;">
-    <div class="card-body">
-      <h5 class="card-title">
-        <%= randHex %>
-        <% argument.argumentId = randHex %>
-      </h5>
-      <p class="card-text">This is your "Argument Code". </p><p class="card-text"> write it down somewhere.</p>
-      <button class="btn btn-success btn-lg" type="submit">Create Argument</button>
-    </div>
+    <div class="card text-center" style="width: 18rem; background-color: darkslategray;">
+      <div class="card-body">
+        <h5 class="card-title" disabled="true">
+          <%= argument.argumentId=randHex %>
+        </h5>
+        <p class="card-text">This is your "Argument Code". </p>
+        <p class="card-text"> Write it down somewhere.</p>
+        <button class="btn btn-success btn-lg" type="submit">Create Argument</button>
+      </div>
     </div>
   </div>
 
-  <a href="/" class="btn btn-outline-danger">Cancel</a>
+<a href="/" class="btn btn-outline-danger">Cancel</a>
