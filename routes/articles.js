@@ -9,7 +9,7 @@ router.get('/new', (req, res) => {
 
 router.get('/edit/:id', async (req, res) => {
   const argument = await Argument.findById(req.params.id)
-  res.render('articles/edit', { argument: argument })
+  res.render('articles/edit', { argument: argument, randHex: argument.randHex })
 })
 
 router.get('/:slug', async (req, res) => {
