@@ -8,7 +8,8 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dummy Duel | <%= argument.title %></title>
+  <title>Dummy Duel | <%= argument.title %>
+  </title>
   <a href="/"><img src="../images/testlogo.png" class="rounded mx-auto d-block" alt="logo"></a>
   <br></br>
 </head>
@@ -26,24 +27,15 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= argument.title %> </h5>
-            <p class="card-text"> <%= argument.description %> </p>
-            <a href="#" class="btn btn-primary">Read Article</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= argument.title %> </h5>
-            <p class="card-text"> <%= argument.description %> </p>
-            <a href="#" class="btn btn-primary">Read Article</a>
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= argument.title %>
+        </h5>
+        <p class="card-text">
+          <%= argument.description %>
+        </p>
+        <a href="/" class="btn btn-primary">Read Article</a>
       </div>
     </div>
   </div>

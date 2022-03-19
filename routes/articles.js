@@ -1,5 +1,6 @@
 const express = require('express')
 const Argument = require('./../models/argument')
+const Article = require('./../models/article')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
@@ -16,6 +17,14 @@ router.get('/:slug', async (req, res) => {
   const argument = await Argument.findOne({ slug: req.params.slug })
   if (argument == null) res.redirect('/')
   res.render('articles/show', { argument: argument })
+})
+
+// here
+router.get('/:slug/:articleId', async (req, res) => {
+  const argument = await Argument.findOne({ slug: req.params.slug })
+  const article = await Article.findOne({ slug: req.params.articleId})
+  if (argument == null) res.redirect('/')
+  res.render('articles/show', { argument: article })
 })
 
 router.post('/', async (req, res, next) => {
